@@ -187,9 +187,13 @@ namespace singly_linked_list
                         default:
                             {
                                 Console.WriteLine("\nCheck for the vakue entered");
-                                break
+                                break;
                             }
                     }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("\nCheck for the value entered ");
                 }
             }
         }
