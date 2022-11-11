@@ -160,6 +160,35 @@ namespace singly_linked_list
                             {
                                 obj.traverse();
                             }
+                            break;
+                        case '4':
+                            {
+                                if (obj.listEmpty() == true)
+                                {
+                                    Console.WriteLine("\nList is empty");
+                                    break;
+                                }
+                                Node previous, current;
+                                previous = current = null;
+                                Console.Write("\nEnter the roll number of the " + "student whose record is to be searched: ");
+                                int num = Convert.ToInt32(Console.ReadLine());
+                                if (obj.Search(num, ref previous, ref current) == false)
+                                    Console.WriteLine("\nRecord not found. ");
+                                else
+                                {
+                                    Console.WriteLine("\nRecord found");
+                                    Console.WriteLine("\nRoll number: " + current.rollNumber);
+                                    Console.WriteLine("\nName: " + current.name);
+                                }
+                            }
+                            break;
+                        case '5':
+                            return;
+                        default:
+                            {
+                                Console.WriteLine("\nCheck for the vakue entered");
+                                break
+                            }
                     }
                 }
             }
