@@ -85,7 +85,25 @@ namespace singly_linked_list
             if (Search(nim, ref previous, ref current) == false)
                 return false;
             previous.next = current.next;
+            if (current == START)
+                START = START.next;
             return true;
         }
+        public bool Search(int nim,ref Node previous ,ref Node current)
+        {
+            previous = START;
+            current = START;
+
+            while ((current != null) && (nim != current.rollNumber))
+            {
+                previous = current;
+                current = current.next;
+            }
+            if (current == null)
+                return (false);
+            else
+                return (true);
+        }
+
     }
 }
