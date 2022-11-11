@@ -77,5 +77,15 @@ namespace singly_linked_list
                 Console.WriteLine();
             }
         }
+        public bool delNode(int nim)
+        {
+            Node previous, current;
+            previous = current = null;
+            //check if the spisified node is present in the list or not
+            if (Search(nim, ref previous, ref current) == false)
+                return false;
+            previous.next = current.next;
+            return true;
+        }
     }
 }
